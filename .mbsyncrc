@@ -2,7 +2,7 @@
 IMAPAccount betlach
 Host imap.1and1.com
 User honza@betlach.name
-Pass $1Napoleon
+Pass 
 # PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mbsyncpassbetlach.gpg"
 Port 993
 SSLType IMAPS
