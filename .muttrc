@@ -1,0 +1,60 @@
+
+# GENERAL
+
+#set editor=`echo \$EDITOR`
+set editor = vim
+set sidebar_visible = yes
+set sidebar_width = 15
+
+# ONLINE
+
+# set from = "honza@betlach.name"
+# set realname = "Jan Betlach"
+# set imap_user = "honza@betlach.name"
+# set imap_pass = ""
+# set smtp_url = "smtp://$imap_user@smtp.1and1.com:587/"
+# set smtp_pass = $imap_pass
+# set folder = "{imap.1and1.com/ssl}"
+# set spoolfile = "+INBOX"
+# set record = "+Sent objects"
+# set postponed = "+Drafts"
+# set trash = "+Trash"
+# set move = no
+# mailboxes "+INBOX"
+# set header_cache = "~/.cache/mutt/headers" 
+
+# LOCAL
+
+# IMAP
+
+set mbox_type = Maildir
+set folder = ~/.mail/betlach
+set mbox_type = maildir
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+set header_cache = "~/.cache/mutt/headers" 
+set message_cachedir = "~/.cache/mutt/bodies"
+
+# SMTP
+
+set realname = 'Jan Betlach'
+set sendmail = "/usr/bin/msmtp"
+set folder = ~/.mail/betlach
+set mbox = +mbox
+set spoolfile = +INBOX
+set record = +Sent
+set postponed = +Drafts
+set mbox_type = Maildir
+mailboxes +inbox 
+
+# HEADERS
+set edit_headers = yes
+unmy_hdr *
+unset use_from
+unset use_domain
+unset user_agent
+my_hdr X-Info: Open BSD.
+
+# SIGNATURE
+set signature="~/.signature"

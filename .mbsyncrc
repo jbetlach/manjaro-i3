@@ -1,0 +1,78 @@
+
+IMAPAccount betlach
+Host imap.1and1.com
+User honza@betlach.name
+Pass $1Napoleon
+# PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mbsyncpassbetlach.gpg"
+Port 993
+SSLType IMAPS
+AuthMechs Login
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+# CertificateFile ~/.cert/imap.1and1.com.pem
+
+IMAPStore betlach-remote
+Account betlach
+
+MaildirStore betlach-local
+Path ~/.mail/betlach/
+Inbox ~/.mail/betlach/INBOX
+
+Channel betlach-inbox
+Master :betlach-remote:"INBOX"
+Slave :betlach-local:INBOX
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Channel betlach-sent
+Master :betlach-remote:"Sent"
+Slave :betlach-local:Sent
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Channel betlach-drafts
+Master :betlach-remote:"Drafts"
+Slave :betlach-local:Drafts
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Channel betlach-archive
+Master :betlach-remote:"Archive"
+Slave :betlach-local:Archive
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Channel betlach-spam
+Master :betlach-remote:"Spam"
+Slave :betlach-local:Spam
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Channel betlach-trash
+Master :betlach-remote:"Trash"
+Slave :betlach-local:Trash
+Create Both
+Sync All
+Expunge Both
+SyncState *
+
+Group mailbox
+Channel betlach-inbox
+Channel betlach-archive
+Channel betlach-drafts
+Channel betlach-sent
+Channel betlach-trash
+Channel betlach-spam
+
+
+
+
