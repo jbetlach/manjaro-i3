@@ -49,6 +49,7 @@ set mbox_type = Maildir
 mailboxes +inbox 
 
 # HEADERS
+
 set edit_headers = yes
 unmy_hdr *
 unset use_from
@@ -57,4 +58,5 @@ unset user_agent
 my_hdr X-Info: Open BSD.
 
 # SIGNATURE
+
 set signature="~/.signature"
